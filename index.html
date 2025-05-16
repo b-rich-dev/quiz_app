@@ -8,6 +8,7 @@
 
     <link rel="icon" type="image/png" href="./assets/brain result.png">
     <link rel="stylesheet" href="./style.css">
+
     <script src="./script.js"></script>
 
     <!-- // Bootstrap CSS and JS -->
@@ -19,17 +20,70 @@
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">QuizApp</a>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">QuizApp</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./assets/logo.png" class="img-fluid rounded-start" alt="Logo">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Frage</h5>
+                        <div>
+                            <button type="button" class="btn btn-light" style="margin-bottom: 8px;">
+                                <span class="badge text-bg-secondary">A</span>
+                                Antwort
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light" style="margin-bottom: 8px;">
+                                <span class="badge text-bg-secondary">B</span>
+                                Antwort
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light" style="margin-bottom: 8px;">
+                                <span class="badge text-bg-secondary">C</span>
+                                Antwort
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-light" style="margin-bottom: 8px;">
+                                <span class="badge text-bg-secondary">D</span>
+                                Antwort
+                            </button>
+                        </div>
+                        <div class="arrow_container">
+                            <div class="arrow"><img src="./assets/designerpack/chevron-back-outline.svg" alt="Pfeil Links">
+                            </div>
+                            <p>1 von 10</p>
+                            <div class="arrow"><img src="./assets/designerpack/chevron-forward-outline.svg" alt="Pfeil Rechts">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <h1>hallo welt</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi at ab quaerat repellendus delectus. Eligendi
-        voluptates vitae, libero dolore, molestias recusandae vel tempora cumque enim dolorem, sapiente fuga expedita.
-        Totam!</p>
-    <button class="btn btn-secondary">Action!</button>
-    das hier ist ein <a href="#">Link</a>
+    </main>
+    <footer>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./assets/brain result.png" alt="Logo" width="30" height="30"
+                        class="d-inline-block align-text-top">QuizApp</a>
+            </div>
+        </nav>
+    </footer>
 </body>
 
 </html>

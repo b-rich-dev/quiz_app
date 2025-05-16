@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    background-color: #6a91fa;
+}
+
+.card {
+    width: 80%;
+    max-width: 1536px;
+    margin: 80px 10% 0 10%;
+}
+
+.col-md-4{
+    background-color: #27355C;
+}
+
+.col-md-8{
+    background-image: url(./assets/brainbg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.arrow_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 8px 0 8px 0;
+}
+
+.arrow_container p {
+    margin: unset;
+}
+
+.arrow{
+    background-color: #6C757D;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow img{
+    object-fit: cover;
+    display: block;
+    width: 80%;
+    height: 80%;
+}
