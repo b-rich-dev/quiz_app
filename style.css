@@ -28,19 +28,20 @@ main {
 .col-md-4 {
     background-color: #27355C;
     display: flex;
-    justify-content: center;
-    padding-top: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.col-md-4 img {
-    height: 40%;
-    width: auto;
+.quizapp-img {
+    width: 120px;
+    height: auto;
     object-fit: cover;
     display: block;
 }
 
 .col-md-8 {
-    background-image: url(./assets/img/brainbg.jpg);
+    /* background-image: url(./assets/img/brainbg.jpg); */
     background-size: cover;
     background-position: center;
 }
@@ -70,6 +71,7 @@ main {
 .arrow {
     background-color: #6C757D;
     border-radius: 50%;
+    border: unset;
     width: 24px;
     height: 24px;
 
@@ -83,6 +85,10 @@ main {
     display: block;
     width: 80%;
     height: 80%;
+}
+
+.arrow img:hover {
+    cursor: pointer;
 }
 
 .question_container {
@@ -125,4 +131,52 @@ main {
 .my-alert-success {
     background-color: #D1E7DD;
     margin-bottom: 0 !important;
+}
+
+.tropy {
+    width: 120px;
+    height: auto;
+
+    position: absolute;
+    top: 36%;
+    right: 0px;
+    z-index: 1000;
+}
+
+.end-logo {
+    width: 160px;
+    height: auto;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 560px;
+}
+
+.h-style {
+    color: white;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .col-md-4 {
+        flex-direction: row;
+    }
+
+    .h-style h3{
+        font-size: small;
+        margin-top: .5rem;
+    }
 }

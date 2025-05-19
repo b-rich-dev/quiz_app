@@ -81,6 +81,8 @@ let questions = [
     }
 ];
 
+let rightQuestions = 0;
+
 let currentQuestion = 0;
 
 
@@ -96,13 +98,31 @@ function getQuizLenght() {
 
 
 function showCurrentQuestions() {
-    let question = questions[currentQuestion];
 
-    document.getElementById("question_text").innerHTML = question['question']
-    document.getElementById("answer_a").innerHTML = question['answerA']
-    document.getElementById("answer_b").innerHTML = question['answerB']
-    document.getElementById("answer_c").innerHTML = question['answerC']
-    document.getElementById("answer_d").innerHTML = question['answerD']
+    if (currentQuestion >= questions.length) {
+        document.getElementById("end-quiz").style = "";
+        document.getElementById("quiz").style = "display: none;";
+        document.getElementById("amount-of-questions").innerHTML = questions.length;
+        document.getElementById("amount-of-right-questions").innerHTML = rightQuestions;
+        document.getElementById("tropy").style = "";
+    } else {
+        let percent = (currentQuestion + 1)/ questions.length;
+        percent = Math.round(percent*100);
+
+        document.getElementById("progress-bar").textContent = `${percent}%`;
+        document.getElementById("progress-bar").style.width = `${percent}%`;
+        document.getElementById("progress-bar").setAttribute("aria-valuenow", `${percent}`);
+
+        let question = questions[currentQuestion];
+
+        document.getElementById("question_text").innerHTML = question['question']
+        document.getElementById("answer_a").innerHTML = question['answerA']
+        document.getElementById("answer_b").innerHTML = question['answerB']
+        document.getElementById("answer_c").innerHTML = question['answerC']
+        document.getElementById("answer_d").innerHTML = question['answerD']
+
+        document.getElementById("question-number").innerHTML = currentQuestion + 1
+    }
 }
 
 
@@ -115,6 +135,7 @@ function answer(selection) {
 
     if (selectedQuestionCharacter == question['correctAnswer']) {
         returnGreenClass(selection, idLetter);
+        rightQuestions++;
     } else {
         returnRedAndRightClass(selection, idOfRightAnswer, idLetter);
         returnGreenClass(idOfRightAnswer, correctLetter);
@@ -136,4 +157,47 @@ function returnRedAndRightClass(selection, idOfRightAnswer, idLetter) {
     document.getElementById(selection).classList.add('background-light-red')
     document.getElementById(idOfRightAnswer).classList.add('background-light-green')
     document.getElementById(idLetter).classList.add('bg-danger')
+}
+
+
+function nextQuestion() {
+    currentQuestion++;
+    document.getElementById("next-button").disabled = true;
+    resetAnswerButtons()
+    showCurrentQuestions()
+}
+
+
+function resetAnswerButtons() {
+    document.getElementById("answer_a").parentNode.classList.remove('background-light-green')
+    document.getElementById("answer_a").classList.remove('background-light-green')
+    document.getElementById("answer_a").parentNode.classList.remove('background-light-red')
+    document.getElementById("answer_a").classList.remove('background-light-red')
+
+    document.getElementById("letter_a").classList.remove('bg-success')
+    document.getElementById("letter_a").classList.remove('bg-danger')
+
+    document.getElementById("answer_b").parentNode.classList.remove('background-light-green')
+    document.getElementById("answer_b").classList.remove('background-light-green')
+    document.getElementById("answer_b").parentNode.classList.remove('background-light-red')
+    document.getElementById("answer_b").classList.remove('background-light-red')
+
+    document.getElementById("letter_b").classList.remove('bg-success')
+    document.getElementById("letter_b").classList.remove('bg-danger')
+
+    document.getElementById("answer_c").parentNode.classList.remove('background-light-green')
+    document.getElementById("answer_c").classList.remove('background-light-green')
+    document.getElementById("answer_c").parentNode.classList.remove('background-light-red')
+    document.getElementById("answer_c").classList.remove('background-light-red')
+
+    document.getElementById("letter_c").classList.remove('bg-success')
+    document.getElementById("letter_c").classList.remove('bg-danger')
+
+    document.getElementById("answer_d").parentNode.classList.remove('background-light-green')
+    document.getElementById("answer_d").classList.remove('background-light-green')
+    document.getElementById("answer_d").parentNode.classList.remove('background-light-red')
+    document.getElementById("answer_d").classList.remove('background-light-red')
+
+    document.getElementById("letter_d").classList.remove('bg-success')
+    document.getElementById("letter_d").classList.remove('bg-danger')
 }
