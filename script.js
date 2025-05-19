@@ -119,6 +119,7 @@ function answer(selection) {
         returnRedAndRightClass(selection, idOfRightAnswer, idLetter);
         returnGreenClass(idOfRightAnswer, correctLetter);
     }
+    document.getElementById("next-button").disabled = false;
 }
 
 
