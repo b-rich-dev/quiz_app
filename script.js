@@ -41,7 +41,7 @@ function showCurrentQuestions() {
         document.getElementById("question-number").innerHTML = currentQuestion + 1
 
         document.getElementById("previous-button").disabled = currentQuestion === 0;
-        document.getElementById("next-button").disabled = currentQuestion >= questions.length - 1;
+        // document.getElementById("next-button").disabled = currentQuestion >= questions.length - 1;
         document.getElementById("next-button").disabled = true;
     }
 }
@@ -88,28 +88,10 @@ function nextQuestion() {
     document.getElementById("next-button").disabled = true;
     resetAnswerButtons()
     showCurrentQuestions()
-    console.log(currentQuestion);
 }
 
 
-// function previousQuestion() {
-//     // document.getElementById("previous-button").disabled = false;
-//     // currentQuestion--;
-//     // showCurrentQuestions()
-//     if (currentQuestion >= 0) {
-//         document.getElementById("previous-button").disabled = false;
-//         currentQuestion--;
-//         showCurrentQuestions()
-        
-//     } 
-    
-//     if (currentQuestion === 0) {
-//         document.getElementById("previous-button").disabled = true;
-//     }
-// }
-
 function previousQuestion() {
-    console.log("currentQuestion vor Klick:", currentQuestion);
     
     if (currentQuestion > 0) {
         document.getElementById("previous-button").disabled = false;
@@ -117,14 +99,28 @@ function previousQuestion() {
         showCurrentQuestions();
     }
 
-    // Button deaktivieren, wenn wir am Anfang sind
     if (currentQuestion === 0) {
         document.getElementById("previous-button").disabled = true;
     } else {
         document.getElementById("previous-button").disabled = false;
     }
+
+    resetAnswerButtons();
+    showRightAnswer();
 }
-console.log(currentQuestion);
+
+
+function showRightAnswer(idOfRightAnswer, correctLetter) {
+    let question = questions[currentQuestion];
+    idOfRightAnswer = `answer_${question['correctAnswer'].toLowerCase()}`;
+    correctLetter = `letter_${question['correctAnswer'].toLowerCase()}`;
+    
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('background-light-green')
+    document.getElementById(idOfRightAnswer).classList.add('background-light-green')
+    document.getElementById(correctLetter).classList.add('bg-success')
+    document.getElementById("next-button").disabled = false;
+}
+
 
 function resetAnswerButtons() {
     document.getElementById("answer_a").parentNode.classList.remove('background-light-green')
