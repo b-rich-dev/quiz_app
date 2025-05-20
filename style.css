@@ -161,12 +161,12 @@ main {
 }
 
 .progress {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 2px;
 }
 
 @media (max-width: 768px) {
@@ -175,8 +175,15 @@ main {
         flex-direction: row;
     }
 
-    .h-style h3{
+    .h-style h3 {
         font-size: small;
         margin-top: .5rem;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .card {
+        width: 100%;
     }
 }
