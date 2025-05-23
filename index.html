@@ -43,7 +43,15 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body" id="start-quiz" style="display: none;"></div>
+                    <div class="card-body" id="start-quiz" style="">
+                        <div class="start-quiz">
+                            <div class="text">
+                                <h1>Wilkommen bei QuizApp</h1>
+                                <h3>Zeige uns dein Wissen</h3>
+                            </div>
+                            <button onclick="startGame()" class="btn btn-primary">Start Quiz</button>
+                        </div>
+                    </div>
                     <div class="card-body, center" id="end-quiz" style="display: none;">
                         <img class="end-logo" src="./assets/img/brain result.png" alt="Logo">
                         <h1><b>Quiz beendet!</b></h1>
@@ -51,7 +59,7 @@
                                 class="text-dark">xx</b> von <b id="amount-of-questions" class="text-dark">xx</b></h2>
                         <button onclick="restartGame()" class="btn btn-primary">Nochmal Spielen</button>
                     </div>
-                    <div class="card-body" id="quiz">
+                    <div class="card-body" id="quiz" style="display: none;">
                         <h5 id="question_text" class="card-title">Frage</h5>
                         <div class="question_container" onclick="answer('answer_a')">
                             <span id="letter_a" class="badge text-bg-secondary">A</span>

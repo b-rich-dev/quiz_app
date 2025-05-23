@@ -170,3 +170,11 @@ function restartGame() {
 
     init()
 }
+
+
+function startGame() {
+    document.getElementById("start-quiz").style = "display: none;";
+    document.getElementById("quiz").style = "";
+
+    init()
+}
